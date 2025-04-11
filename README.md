@@ -10,6 +10,7 @@ AUTHORS: Meysam Motaharfar
 4. [Key Questions](#Key-Questions)
 5. [Key Insights](#Key-Insights)
 6. [Conclusions](#Conclusions)
-7. ![performance](performance.png)
+
+   ![performance](performance.png)
 
 
