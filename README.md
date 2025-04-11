@@ -36,6 +36,34 @@ Training samples: 800, 1600, or 2400 samples
 
 This results in a systematic grid of classification tasks to evaluate model generalization in low- to mid-resource regimes.
 
+# Models Fine-Tuned
+
+Four different pre-trained LLMs were fine-tuned for each dataset configuration:
+
+Qwen 2.5
+
+LLaMA 3.2
+
+GPT-2 XL
+
+Gemma 3
+
+Each model was fine-tuned using standard supervised training with appropriate tokenization, classification heads, and early stopping based on validation performance.
+
+# Evaluation Metric
+
+The primary evaluation metric was accuracy, calculated on held-out validation sets for each dataset. The metric offers insight into how well each model differentiates between varying numbers of emotional categories.
+
+# Results Summary
+
+As expected, accuracy decreases as the number of label classes increases, due to increased classification difficulty.
+
+LLaMA 3.2 and Qwen 2.5 generally outperform GPT-2 XL across most settings, especially in high-label/low-sample regimes.
+
+Model performance stabilizes with more data (2400 samples), but degradation is still observed for 16-class classification.
+
+A heatmap of model performance across datasets reveals the relative robustness of models under varying levels of complexity and training data.
+
 ![performance](performance.png)
 
 
