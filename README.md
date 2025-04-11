@@ -35,6 +35,18 @@ Training samples: 800, 1600, or 2400 samples
 
 This results in a systematic grid of classification tasks to evaluate model generalization in low- to mid-resource regimes.
 
+# Key Tools & Libraries
+
+Transformers (Hugging Face) – for model loading, tokenization, training
+
+PEFT (LoRA) – for parameter-efficient fine-tuning
+
+Datasets (Hugging Face) – for dataset handling and processing
+
+PyTorch – deep learning backend for model training
+
+Evaluate – for computing accuracy and other metrics
+
 # Models Fine-Tuned
 
 Four different pre-trained LLMs were fine-tuned for each dataset configuration:
