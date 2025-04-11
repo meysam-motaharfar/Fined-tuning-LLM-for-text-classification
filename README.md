@@ -5,10 +5,11 @@ AUTHORS: Meysam Motaharfar
 
 # Table of Contents
 1. [Project Overview](#Project-Overview)
-3. [Dataset](#Dataset-Source-And-Overview)
+2. [Dataset](#Dataset-Source-And-Overview)
+3. [Key Tools & Libraries](#key-Tools-&-Libraries)
 4. [Models Fine-Tuned](#Models-Fine-Tuned)
-6. [Evaluation Metric](#Evaluation-Metric)
-7. [Results & Summary](#Results-&-Summary)
+5. [Evaluation Metric](#Evaluation-Metric)
+6. [Results & Summary](#Results-&-Summary)
 
 # Project Overview
 
