@@ -6,10 +6,9 @@ AUTHORS: Meysam Motaharfar
 # Table of Contents
 1. [Project Overview](#Project-Overview)
 3. [Dataset](#Dataset-Source-And-Overview)
-4. [Tools Used](#Tools-Used)
-5. [Key Questions](#Key-Questions)
-6. [Key Insights](#Key-Insights)
-7. [Conclusions](#Conclusions)
+4. [Models Fine-Tuned](#Models-Fine-Tuned)
+6. [Evaluation Metric](#Evaluation-Metric)
+7. [Results & Summary](#Results-&-Summary)
 
 # Project Overview
 
@@ -54,7 +53,7 @@ Each model was fine-tuned using standard supervised training with appropriate to
 
 The primary evaluation metric was accuracy, calculated on held-out validation sets for each dataset. The metric offers insight into how well each model differentiates between varying numbers of emotional categories.
 
-# Results Summary
+# Results & Summary
 
 As expected, accuracy decreases as the number of label classes increases, due to increased classification difficulty.
 
