@@ -5,12 +5,22 @@ AUTHORS: Meysam Motaharfar
 
 # Table of Contents
 1. [Project Overview](#Project-Overview)
-2. [Dataset Sources and Overview](#Dataset-Source-And-Overview)
-3. [Tools Used](#Tools-Used)
-4. [Key Questions](#Key-Questions)
-5. [Key Insights](#Key-Insights)
-6. [Conclusions](#Conclusions)
+3. [Dataset Sources and Overview](#Dataset-Source-And-Overview)
+4. [Tools Used](#Tools-Used)
+5. [Key Questions](#Key-Questions)
+6. [Key Insights](#Key-Insights)
+7. [Conclusions](#Conclusions)
 
-   ![performance](performance.png)
+# Project Overview:
+
+The goal of this project is to evaluate the performance of several large language models (LLMs) on multi-class text classification tasks using subsets of the GoEmotions dataset. The study explores how model performance varies with:
+
+The number of emotion labels (2, 4, 8, 16),
+
+The number of training samples per dataset (800, 1600, 2400), and
+
+The choice of pre-trained language models.
+
+![performance](performance.png)
 
 
