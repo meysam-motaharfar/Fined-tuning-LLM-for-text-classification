@@ -53,7 +53,7 @@ This design forms a systematic evaluation grid across varying classification com
 
 # Models
 
-Four different pre-trained LLMs were fine-tuned for each dataset configuration:
+The following pre-trained LLMs were fine-tuned for each dataset configuration:
 
 Qwen 2.5
 
@@ -63,19 +63,45 @@ GPT-2 XL
 
 Gemma 3
 
-Each model was fine-tuned using standard supervised training with appropriate tokenization, classification heads, and early stopping based on validation performance.
+All models were trained using supervised learning with appropriate classification heads. Training incorporated early stopping based on validation accuracy to avoid overfitting.
 
 # Evaluation Metric
 
-The primary evaluation metric was accuracy, calculated on held-out validation sets for each dataset. The metric offers insight into how well each model differentiates between varying numbers of emotional categories.
+The primary evaluation metric is accuracy, computed on a held-out validation set for each configuration. It reflects the model’s ability to correctly classify text across varying label granularities.
 
 # Results & Summary
 
-As expected, accuracy decreases as the number of label classes increases, due to increased classification difficulty.
+The fine-tuning experiments reveal consistent trends in model performance across different classification complexities and dataset sizes.
 
-LLaMA 3.2 and Qwen 2.5 generally outperform GPT-2 XL across most settings, especially in high-label/low-sample regimes.
+**Effect of Label Complexity**
 
-Model performance stabilizes with more data (2400 samples), but degradation is still observed for 16-class classification.
+As expected, accuracy decreases with increasing label complexity:
+
+For 2-class classification, all models achieve very high accuracy, with LLaMA-3.2 reaching perfect performance (100%) at 2400 samples.
+
+Performance drops steadily as the number of labels increases, especially from 8 to 16 labels.
+
+For 16-label classification, accuracy falls below 60% for all models—even at 2400 samples—highlighting the difficulty of fine-grained emotion classification with limited supervision.
+
+**Effect of Training Data Size**
+
+Across all models, increasing the number of training samples improves performance:
+
+For instance, Qwen 2.5 improves from 43.75% (800 samples) to 56.67% (2400 samples) in the 16-label task.
+
+Gains are more substantial in high-label scenarios where more data mitigates the complexity.
+
+**Model Comparison**
+
+LLaMA-3.2 and Qwen 2.5 demonstrate the best overall performance and robustness across the board:
+
+In the 4-label, 1600-sample setting, LLaMA-3.2 achieves 93.13%, the highest accuracy for this configuration.
+
+In low-data regimes like 800 samples with 16 labels, Qwen 2.5 maintains a reasonable 43.75%, outperforming LLaMA-3.2 (30.00%) and BERT (8.75%).
+
+GPT-2 XL remains competitive for simpler tasks but lags behind in complex, low-resource settings.
+
+BERT, while still effective in low-label tasks (e.g., 99.17% in 2-label, 2400-sample), performs significantly worse in high-label, low-resource scenarios—dropping to 8.75% in the 16-label, 800-sample case.
 
 A heatmap of model performance across datasets reveals the relative robustness of models under varying levels of complexity and training data.
 
