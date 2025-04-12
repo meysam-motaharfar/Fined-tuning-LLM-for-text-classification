@@ -38,7 +38,7 @@ This design forms a systematic evaluation grid across varying classification com
 
 # Key Tools & Libraries
 
-***Hugging Face Transformers** – for model loading, tokenization, and training
+**Hugging Face Transformers** – for model loading, tokenization, and training
 
 **PEFT (LoRA)** – for parameter-efficient fine-tuning
 
@@ -52,13 +52,13 @@ This design forms a systematic evaluation grid across varying classification com
 
 The following pre-trained LLMs were fine-tuned for each dataset configuration:
 
-Qwen 2.5
+-- Qwen 2.5
 
-LLaMA 3.2
+-- LLaMA 3.2
 
-GPT-2 XL
+-- GPT-2 XL
 
-Gemma 3
+-- Gemma 3
 
 All models were trained using supervised learning with appropriate classification heads. Training incorporated early stopping based on validation accuracy to avoid overfitting.
 
