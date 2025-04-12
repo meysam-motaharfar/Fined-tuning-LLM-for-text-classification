@@ -16,11 +16,11 @@ AUTHORS: Meysam Motaharfar
 
 This project evaluates the performance of four pre-trained language models—BERT-base (110M), GPT2-XL (1.5B), Qwen2.5 (1.5B), and LLaMA-3.2 (1B)—on multi-class emotion classification using subsets of the GoEmotions dataset. The goal is to understand how model performance varies with:
 
-Number of emotion labels (2, 4, 8, 16)
+A) Number of emotion labels (2, 4, 8, 16)
 
-Training set size (800, 1600, 2400 samples)
+B) Training set size (800, 1600, 2400 samples)
 
-Model scale and architecture
+C) Model scale and architecture
 
 A key motivation is to compare BERT, a smaller and more lightweight model, with larger LLMs to assess whether it can remain competitive in low- and mid-resource settings. This helps highlight trade-offs between model size, performance, and data efficiency—crucial for real-world, resource-constrained applications.
 
