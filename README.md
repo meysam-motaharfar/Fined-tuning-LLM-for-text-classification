@@ -66,25 +66,25 @@ All models were trained using supervised learning with appropriate classificatio
 
 The models were fine-tuned on emotion classification datasets with varying label complexities (2, 4, 8, and 16 labels) and data sizes (800, 1600, and 2400 samples) under the following configuration:
 
-Quantization: 4-bit quantized models using the BitsAndBytes library were employed to significantly reduce memory consumption and accelerate training.
+A) Quantization: 4-bit quantized models using the BitsAndBytes library were employed to significantly reduce memory consumption and accelerate training.
 
-Adapter Tuning: Low-Rank Adaptation (LoRA) was used for parameter-efficient fine-tuning. Model-specific attention modules (e.g., q_proj, v_proj, c_attn, or query/value) were targeted based on model architecture.
+B) Adapter Tuning: Low-Rank Adaptation (LoRA) was used for parameter-efficient fine-tuning. Model-specific attention modules (e.g., q_proj, v_proj, c_attn, or query/value) were targeted based on model architecture.
 
-Training Regimen:
+C) Training Regimen:
 
-Optimizer: adamw_bnb_8bit
+-- Optimizer: adamw_bnb_8bit
 
-Batch size: 4 per device
+-- Batch size: 4 per device
 
-Learning rate: 1e-4 with cosine scheduler
+-- Learning rate: 1e-4 with cosine scheduler
 
-Epochs: 5
+-- Epochs: 5
 
-Gradient accumulation: 1 step
+-- Gradient accumulation: 1 step
 
-Mixed precision: bf16 used (with fallback to fp16=False)
+-- Mixed precision: bf16 used (with fallback to fp16=False)
 
-Early stopping: Patience of 10 evaluation steps
+-- Early stopping: Patience of 10 evaluation steps
 
 **Note:** Fine-tuning was conducted under limited compute resources, with a single GPU and memory-optimized configurations (e.g., 4-bit quantization and adapter-based tuning). These constraints limited both the model size (to ≤2B parameters) and the maximum batch size.
 
