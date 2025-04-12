@@ -106,39 +106,53 @@ The primary evaluation metric is accuracy, computed on a held-out validation set
 
 # Results & Summary
 
-The fine-tuning experiments reveal consistent trends in model performance across different classification complexities and dataset sizes.
+The fine-tuning experiments reveal consistent and interpretable trends in model performance across different classification complexities and dataset sizes. These trends underscore the trade-offs between model size, label granularity, and data availability.
 
 **Effect of Label Complexity**
 
-As expected, accuracy decreases with increasing label complexity:
+As expected, model accuracy declines with increasing label complexity:
 
-For 2-class classification, all models achieve very high accuracy, with LLaMA-3.2 reaching perfect performance (100%) at 2400 samples.
+For 2-class classification, all models perform extremely well. Notably, LLaMA-3.2 achieves perfect accuracy (100%) with 2400 training samples.
 
-Performance drops steadily as the number of labels increases, especially from 8 to 16 labels.
+Performance steadily degrades as the number of labels increases—particularly from 8 to 16 classes—where distinguishing fine-grained emotional categories becomes more challenging.
 
-For 16-label classification, accuracy falls below 60% for all models—even at 2400 samples—highlighting the difficulty of fine-grained emotion classification with limited supervision.
+For 16-label classification, accuracy drops below 60% for all models, even at the largest dataset size, revealing the inherent difficulty of fine-grained emotion classification under limited supervision.
 
 **Effect of Training Data Size**
 
-Across all models, increasing the number of training samples improves performance:
+Across all models and classification setups, increasing the training data size consistently improves performance:
 
-For instance, Qwen 2.5 improves from 43.75% (800 samples) to 56.67% (2400 samples) in the 16-label task.
+For example, Qwen2.5 improves from 43.75% (800 samples) to 56.67% (2400 samples) on the 16-label task.
 
-Gains are more substantial in high-label scenarios where more data mitigates the complexity.
+These gains are especially pronounced in high-label settings, where additional data helps models learn more nuanced decision boundaries.
 
-**Model Comparison**
+**Model Comparison: Performance vs. Scale**
 
-LLaMA-3.2 and Qwen 2.5 demonstrate the best overall performance and robustness across the board:
+The comparison between BERT (110M parameters) and larger models like LLaMA-3.2 (1B), Qwen2.5 (1.5B), and GPT2-XL (1.5B) highlights clear trends:
 
-In the 4-label, 1600-sample setting, LLaMA-3.2 achieves 93.13%, the highest accuracy for this configuration.
+LLaMA-3.2 and Qwen2.5 show the strongest overall performance and robustness across both low and high complexity settings.
 
-In low-data regimes like 800 samples with 16 labels, Qwen 2.5 maintains a reasonable 43.75%, outperforming LLaMA-3.2 (30.00%) and BERT (8.75%).
+In the 4-label, 1600-sample setup, LLaMA-3.2 achieves 93.13%, the highest accuracy for this configuration.
 
-GPT-2 XL remains competitive for simpler tasks but lags behind in complex, low-resource settings.
+In the challenging 16-label, 800-sample case, Qwen2.5 delivers 43.75%, outperforming LLaMA-3.2 (30.00%) and BERT (8.75%).
 
-BERT, while still effective in low-label tasks (e.g., 99.17% in 2-label, 2400-sample), performs significantly worse in high-label, low-resource scenarios—dropping to 8.75% in the 16-label, 800-sample case.
+GPT2-XL performs competitively in simpler tasks, but shows less stability in complex, low-resource settings.
 
-A heatmap of model accuracies across all configurations can be found below, summarizing performance degradation and robustness with increasing task complexity:
+BERT, while remarkably strong in low-label, data-rich settings (e.g., 99.17% in 2-label, 2400-sample), struggles significantly with increasing label complexity:
+
+Its performance plummets to 8.75% in the 16-label, 800-sample task, highlighting the limitations of smaller models in high-complexity scenarios.
+
+**Heatmap Visualization**
+
+A comprehensive heatmap of model accuracies across all configurations is included below, illustrating:
+
+Performance degradation as label complexity increases.
+
+Gains from larger training datasets.
+
+The robustness of LLaMA-3.2 and Qwen2.5 across all regimes.
+
+BERT’s strengths in simple tasks and weaknesses in more demanding settings.
 
 ![Model_Performnace](Model_Performance.png)
 
