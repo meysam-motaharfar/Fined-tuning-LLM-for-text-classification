@@ -13,13 +13,15 @@ AUTHORS: Meysam Motaharfar
 
 # Project Overview
 
-The goal of this project is to evaluate the performance of several large language models (LLMs) on multi-class text classification tasks using subsets of the GoEmotions dataset. The study explores how model performance varies with:
+This project investigates the performance of several large language models (LLMs) on multi-class emotion classification tasks using subsets of the GoEmotions dataset. The study evaluates how model performance varies based on:
 
-The number of emotion labels (2, 4, 8, 16),
+The number of emotion labels (2, 4, 8, or 16)
 
-The number of training samples per dataset (800, 1600, 2400), and
+The number of training samples (800, 1600, or 2400)
 
-The choice of pre-trained language models.
+The choice of pre-trained language model
+
+The goal is to understand model generalization in low- and mid-resource settings for emotion classification.
 
 # Dataset
 
