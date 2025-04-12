@@ -98,49 +98,33 @@ The fine-tuning experiments reveal consistent and interpretable trends in model 
 
 **A) Effect of Label Complexity**
 
-As expected, model accuracy declines with increasing label complexity:
-
-For 2-class classification, all models perform extremely well. Notably, LLaMA-3.2 achieves perfect accuracy (100%) with 2400 training samples.
-
-Performance steadily degrades as the number of labels increases—particularly from 8 to 16 classes—where distinguishing fine-grained emotional categories becomes more challenging.
-
-For 16-label classification, accuracy drops below 60% for all models, even at the largest dataset size, revealing the inherent difficulty of fine-grained emotion classification under limited supervision.
+In 2-class classification, all models perform well, with LLaMA-3.2 reaching 100% accuracy at 2400 samples. As the number of labels rises—especially from 8 to 16—accuracy drops significantly due to the increased difficulty of fine-grained emotion recognition. At 16 labels, all models fall below 60% accuracy, even with the largest dataset, underscoring the challenge of complex classification under limited supervision.
 
 **B) Effect of Training Data Size**
 
-Across all models and classification setups, increasing the training data size consistently improves performance:
-
-For example, Qwen2.5 improves from 43.75% (800 samples) to 56.67% (2400 samples) on the 16-label task.
-
-These gains are especially pronounced in high-label settings, where additional data helps models learn more nuanced decision boundaries.
+Increasing training data size consistently boosts performance across all models. For instance, Qwen2.5 improves from 43.75% (800 samples) to 56.67% (2400 samples) on the 16-label task. The impact is most significant in high-label settings, where more data helps models refine decision boundaries.
 
 **C) Model Comparison: Performance vs. Scale**
 
-The comparison between BERT (110M parameters) and larger models like LLaMA-3.2 (1B), Qwen2.5 (1.5B), and GPT2-XL (1.5B) highlights clear trends:
+The comparison between BERT (110M parameters) and larger models like LLaMA-3.2 (1B), Qwen2.5 (1.5B), and GPT2-XL (1.5B) reveals key trends:
 
-LLaMA-3.2 and Qwen2.5 show the strongest overall performance and robustness across both low and high complexity settings.
+-- LLaMA-3.2 and Qwen2.5 deliver the best performance and robustness across both low and high complexity tasks. For example, LLaMA-3.2 achieves 93.13% accuracy in the 4-label, 1600-sample setup.
 
-In the 4-label, 1600-sample setup, LLaMA-3.2 achieves 93.13%, the highest accuracy for this configuration.
+-- In the challenging 16-label, 800-sample task, Qwen2.5 outperforms LLaMA-3.2 (43.75% vs. 30.00%) and BERT (8.75%).
 
-In the challenging 16-label, 800-sample case, Qwen2.5 delivers 43.75%, outperforming LLaMA-3.2 (30.00%) and BERT (8.75%).
-
-GPT2-XL performs competitively in simpler tasks, but shows less stability in complex, low-resource settings.
-
-BERT, while remarkably strong in low-label, data-rich settings (e.g., 99.17% in 2-label, 2400-sample), struggles significantly with increasing label complexity:
-
-Its performance plummets to 8.75% in the 16-label, 800-sample task, highlighting the limitations of smaller models in high-complexity scenarios.
+-- GPT2-XL performs well in simpler tasks but is less stable in complex, low-resource settings. BERT excels in low-label, data-rich tasks (99.17% in 2-label, 2400-sample) but struggles with high-label complexity, dropping to 8.75% in the 16-label, 800-sample case.
 
 **D) Heatmap Visualization**
 
-A comprehensive heatmap of model accuracies across all configurations is included below, illustrating:
+The heatmap below shows:
 
-Performance degradation as label complexity increases.
+Performance decline with increasing label complexity.
 
-Gains from larger training datasets.
+Improvement with larger training datasets.
 
-The robustness of LLaMA-3.2 and Qwen2.5 across all regimes.
+Strong performance and robustness of LLaMA-3.2 and Qwen2.5.
 
-BERT’s strengths in simple tasks and weaknesses in more demanding settings.
+BERT's strengths in simple tasks and weaknesses in complex ones.
 
 ![Model_Performnace](Model_Performance.png)
 
