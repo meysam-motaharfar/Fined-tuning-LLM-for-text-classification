@@ -138,7 +138,7 @@ GPT-2 XL remains competitive for simpler tasks but lags behind in complex, low-r
 
 BERT, while still effective in low-label tasks (e.g., 99.17% in 2-label, 2400-sample), performs significantly worse in high-label, low-resource scenarios—dropping to 8.75% in the 16-label, 800-sample case.
 
-A heatmap of model performance across datasets reveals the relative robustness of models under varying levels of complexity and training data.
+A heatmap of model accuracies across all configurations can be found below, summarizing performance degradation and robustness with increasing task complexity:
 
 ![Model_Performnace](Model_Performance.png)
 
