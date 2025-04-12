@@ -7,7 +7,7 @@ AUTHORS: Meysam Motaharfar
 1. [Project Overview](#Project-Overview)
 2. [Dataset](#Dataset-Source-And-Overview)
 3. [Key Tools & Libraries](#key-Tools-&-Libraries)
-4. [Models Fine-Tuned](#Models-Fine-Tuned)
+4. [Models](#Models)
 5. [Evaluation Metric](#Evaluation-Metric)
 6. [Results & Summary](#Results-&-Summary)
 
@@ -25,32 +25,33 @@ The goal is to understand model generalization in low- and mid-resource settings
 
 # Dataset
 
-The base dataset is GoEmotions — a human-annotated dataset of 58k Reddit comments labeled for 27 emotion categories.
+The base dataset is GoEmotions — a human-annotated corpus of 58k Reddit comments labeled with 27 emotion categories.
+
 For this project:
 
-A total of 12 balanced subsets were created.
+12 balanced subsets were created
 
-Each subset represents a specific configuration of:
+Each subset varies by:
 
-Label classes: 2, 4, 8, or 16
+Number of label classes: 2, 4, 8, or 16
 
-Training samples: 800, 1600, or 2400 samples
+Number of training samples per class: 800, 1600, or 2400
 
-This results in a systematic grid of classification tasks to evaluate model generalization in low- to mid-resource regimes.
+This design forms a systematic evaluation grid across varying classification complexities and dataset sizes.
 
 # Key Tools & Libraries
 
-Transformers (Hugging Face) – for model loading, tokenization, training
+**Hugging Face Transformers** – for model loading, tokenization, and training
 
-PEFT (LoRA) – for parameter-efficient fine-tuning
+**PEFT (LoRA)** – for parameter-efficient fine-tuning
 
-Datasets (Hugging Face) – for dataset handling and processing
+**Hugging Face Datasets** – for loading and preprocessing the dataset
 
-PyTorch – deep learning backend for model training
+**PyTorch** – as the deep learning backend
 
-Evaluate – for computing accuracy and other metrics
+**Evaluate** – for computing evaluation metrics such as accuracy
 
-# Models Fine-Tuned
+# Models
 
 Four different pre-trained LLMs were fine-tuned for each dataset configuration:
 
