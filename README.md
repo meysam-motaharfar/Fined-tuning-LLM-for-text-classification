@@ -28,15 +28,11 @@ A key motivation is to compare BERT, a smaller and more lightweight model, with 
 
 The base dataset is GoEmotions — a human-annotated corpus of 58k Reddit comments labeled with 27 emotion categories.
 
-For this project:
+For this project, 12 balanced subsets were created. Each subset varies by:
 
-12 balanced subsets were created
+-- Number of label classes: 2, 4, 8, or 16
 
-Each subset varies by:
-
-Number of label classes: 2, 4, 8, or 16
-
-Number of training samples per class: 800, 1600, or 2400
+-- Number of training samples per class: 800, 1600, or 2400
 
 This design forms a systematic evaluation grid across varying classification complexities and dataset sizes.
 
