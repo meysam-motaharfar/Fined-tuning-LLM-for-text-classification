@@ -1,4 +1,4 @@
-Fine tuning LLM for text classification
+Fine tuning LLM models for text classification
 ===============================================
 
 AUTHORS: Meysam Motaharfar 
