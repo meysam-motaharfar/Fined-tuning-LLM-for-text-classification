@@ -38,7 +38,7 @@ This design forms a systematic evaluation grid across varying classification com
 
 # Key Tools & Libraries
 
-**Hugging Face Transformers** – for model loading, tokenization, and training
+***Hugging Face Transformers** – for model loading, tokenization, and training
 
 **PEFT (LoRA)** – for parameter-efficient fine-tuning
 
