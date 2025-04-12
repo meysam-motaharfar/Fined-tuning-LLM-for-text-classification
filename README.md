@@ -92,14 +92,6 @@ Early stopping: Patience of 10 evaluation steps
 
 **Note:** Fine-tuning was conducted under limited compute resources, with a single GPU and memory-optimized configurations (e.g., 4-bit quantization and adapter-based tuning). These constraints limited both the model size (to ≤2B parameters) and the maximum batch size.
 
-Moreover, due to dataset limitations:
-
-Balanced subsets were used, and each training regime had an equal number of samples per label.
-
-No external data augmentation or unsupervised pretraining was applied.
-
-Evaluation was performed on stratified splits with fixed seeds to ensure consistency. Accuracy, precision, recall, and F1 score were tracked throughout the training using Trainer's logging.
-
 # Evaluation Metric
 
 The primary evaluation metric is accuracy, computed on a held-out validation set for each configuration. It reflects the model’s ability to correctly classify text across varying label granularities.
