@@ -76,6 +76,6 @@ Model performance stabilizes with more data (2400 samples), but degradation is s
 
 A heatmap of model performance across datasets reveals the relative robustness of models under varying levels of complexity and training data.
 
-![performance](performance.png)
+![performance](Model-Performance.png)
 
 
